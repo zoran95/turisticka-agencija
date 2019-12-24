@@ -2,18 +2,33 @@ package model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Destinacija {
 
-	
+	@Id
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
 	private Integer idDestinacija;
 	private String drzava;
 	private String mesto;
 	private String smestaj;
-	private Double cena;
+	private Double cenaDestinacije;
 	private Integer brojNocenja;
 	private Date datumPolaska;
+	private Double popust;
 	
 	
+	
+	public Double getPopust() {
+		return popust;
+	}
+	public void setPopust(Double popust) {
+		this.popust = popust;
+	}
 	public Integer getIdDestinacija() {
 		return idDestinacija;
 	}
@@ -38,11 +53,12 @@ public class Destinacija {
 	public void setSmestaj(String smestaj) {
 		this.smestaj = smestaj;
 	}
-	public Double getCena() {
-		return cena;
+	
+	public Double getCenaDestinacije() {
+		return cenaDestinacije;
 	}
-	public void setCena(Double cena) {
-		this.cena = cena;
+	public void setCenaDestinacije(Double cenaDestinacije) {
+		this.cenaDestinacije = cenaDestinacije;
 	}
 	public Integer getBrojNocenja() {
 		return brojNocenja;
