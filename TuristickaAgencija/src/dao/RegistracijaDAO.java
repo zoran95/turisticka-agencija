@@ -12,7 +12,7 @@ public class RegistracijaDAO {
 	SessionFactory factory = new Configuration().configure().buildSessionFactory();
 	
 	
-	public boolean upisiUseraUBazu(String userName, String password) {
+	public boolean upisiUseraUBazu(String userName, String password) {  
 		
 		User user = new User();
 		user.setUserName(userName);
