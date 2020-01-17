@@ -1,6 +1,8 @@
 package service;
 
 import dao.RegistracijaDAO;
+import model.User;
+import razno.Common;
 import validacija.ValidacijaRegistracije;
 
 public class RegistracioniService {
@@ -13,12 +15,20 @@ public class RegistracioniService {
 	//povezujem se sa dao klasom
 	RegistracijaDAO dao = new RegistracijaDAO();
 	
+	//povezujem sa klasom razno
+	Common razno = new Common();
+	
 	public boolean daLiSuIstiPasswordi(String password, String repeatedPassword) {
 		return validacija.daLiSuIstiPasswordi(password, repeatedPassword);
 	}
 
-	public boolean upisiUseraUBazu(String userName, String password) {
+	public boolean upisiUseraUBazu(User user) {
 		
-		return dao.upisiUseraUBazu(userName, password);
+		return dao.upisiUseraUBazu(user);
+	}
+
+	public User vratiUserModel(String userName, String password) {
+		
+		return razno.vratiUserModel(userName, password);
 	}
 }

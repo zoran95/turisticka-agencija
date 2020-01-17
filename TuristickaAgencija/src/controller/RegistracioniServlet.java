@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.User;
 import service.RegistracioniService;
 
 /**
@@ -62,10 +63,14 @@ public class RegistracioniServlet extends HttpServlet {
 		//provera passworda
 		boolean proveraPassworda = service.daLiSuIstiPasswordi(password, repeatedPassword);
 		
+		//vraca mi popunjenog usera(to mi je model)
+		User user = service.vratiUserModel(userName, password);
+		
+		
 		if (proveraPassworda) {
 		
 			//upisujem usera u bazu
-			boolean daLiJeUpisaoUseraUBazu = service.upisiUseraUBazu(userName, password);
+			boolean daLiJeUpisaoUseraUBazu = service.upisiUseraUBazu(user);
 			
 			if (daLiJeUpisaoUseraUBazu) {
 				//idi na uspesno si se registrovao!!!
