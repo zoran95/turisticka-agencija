@@ -34,5 +34,22 @@ LOGO
 
 
 %>
+<div >
+<a href = "../SviUseriServlet"> 
+		<img src="../slike/globus.jpg">
+	</a>
+	</div>
+	<br>
+	<br>
+	<br>
+	<div>
+	<a href = "dodajDestinaciju.jsp"> 
+		<button >DODAJ DESTINACIJU</button>
+	</a>
+	
+		<a href = "../ListaDestinacijaServlet"> 
+		<button >DODAJ TRANSPORT</button>
+	</a>
+	</div>
 </body>
 </html>
